@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "gamehinter"
+version = "0.0.0"
+description = ""
+authors = ["k-valchuk <valchuk.kirya@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
