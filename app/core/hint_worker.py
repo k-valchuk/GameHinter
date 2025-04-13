@@ -27,8 +27,6 @@ class HintWorker(IHintWorker):
             "Данные уровня: {description}"
         )
 
-
-
         chat_prompt = ChatPromptTemplate.from_messages(
             [HumanMessagePromptTemplate.from_template(template)]
         )
