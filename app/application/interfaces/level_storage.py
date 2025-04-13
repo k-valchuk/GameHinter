@@ -16,5 +16,5 @@ class ILevelStorage(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    async def create_level(self, level_data: UploadFile) -> None:
+    async def create_level(self, level_data: UploadFile) -> int:
         raise NotImplementedError

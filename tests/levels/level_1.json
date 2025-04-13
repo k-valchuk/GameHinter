@@ -1,0 +1,10 @@
+{
+    "level": {
+      "id": 1,
+      "objects": [
+        {"type": "key", "x": 10, "y": 20},
+        {"type": "door", "x": 50, "y": 60},
+        {"type": "player", "x": 5, "y": 5}
+      ]
+    }
+}

@@ -16,8 +16,9 @@ class LevelStorage(ILevelStorage):
     def get_all_levels(self) -> list[Level]:
         return list(self.__data.values())
 
-    async def create_level(self, level_data: UploadFile) -> None:
+    async def create_level(self, level_data: UploadFile) -> int:
         json_data = await level_data.read()
         json_data = json.loads(json_data)
         level = Level.model_validate(json_data["level"])  # type: ignore
         self.__data[level.id] = level
+        return level.id

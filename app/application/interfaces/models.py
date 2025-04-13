@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 
 
 class LevelObject(BaseModel):
@@ -10,3 +10,13 @@ class LevelObject(BaseModel):
 class Level(BaseModel):
     id: int
     objects: list[LevelObject]
+
+    @field_validator("objects", mode="after")
+    @classmethod
+    def has_player(cls, value: list[LevelObject]) -> list[LevelObject]:
+        if len(value) <= 1:
+            raise ValueError
+        for obj in value:
+            if "player" in obj.type:
+                return value
+        raise ValueError

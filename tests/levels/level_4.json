@@ -1,0 +1,10 @@
+{
+    "level": {
+        "id": 4,
+        "objects": [
+          { "type": "player", "x": 5, "y": 5 },
+          { "type": "coin", "x": 8, "y": 8 },
+          { "type": "npc", "x": 15, "y": 15 }
+        ]
+      }
+}
