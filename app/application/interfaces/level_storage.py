@@ -8,7 +8,7 @@ from app.application.interfaces.models import Level
 class ILevelStorage(ABC):
 
     @abstractmethod
-    def get_level(self, level_id: int) -> Level | None:
+    def get_level(self, level_id: int) -> Level:
         raise NotImplementedError
 
     @abstractmethod

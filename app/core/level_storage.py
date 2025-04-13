@@ -10,8 +10,8 @@ class LevelStorage(ILevelStorage):
     def __init__(self) -> None:
         self.__data: dict[int, Level] = {}
 
-    def get_level(self, level_id: int) -> Level | None:
-        return self.__data.get(level_id, None)
+    def get_level(self, level_id: int) -> Level:
+        return self.__data[level_id]
 
     def get_all_levels(self) -> list[Level]:
         return list(self.__data.values())

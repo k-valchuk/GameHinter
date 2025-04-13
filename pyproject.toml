@@ -12,6 +12,8 @@ uvicorn = "^0.34.0"
 pydantic-settings = "^2.8.1"
 loguru = "^0.7.3"
 python-multipart = "^0.0.20"
+langchain = "^0.3.23"
+googletrans = "^4.0.2"
 
 
 [tool.poetry.group.dev.dependencies]
