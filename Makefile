@@ -7,7 +7,7 @@ build:
 	- docker build -t gamehinter .
 
 up: build
-	docker run -p 8000:8000 -it gamehinter
+	docker run --env-file=.env -p 8000:8000 -it gamehinter
 format:
 	- isort --profile black .
 	- black .
