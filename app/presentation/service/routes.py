@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Response
+from fastapi import APIRouter, Response
 
 from app.config import config
 
@@ -11,5 +11,5 @@ async def get_config():
 
 
 @router.put("")
-async def get_config():
+async def change_config():
     return Response(status_code=204)

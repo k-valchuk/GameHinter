@@ -13,7 +13,7 @@ format:
 	- black .
 
 flake: 
-	flake8 app alembic main.py
+	flake8 app main.py
 
 SOURCE_CODE_PATHS = main.py app
 

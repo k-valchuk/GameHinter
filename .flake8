@@ -1,0 +1,21 @@
+[flake8]
+# F401 - imported but unused - неактуально для __init__ файлов
+# E203 - whitespace before ':' - конфликтует с black
+# E501 - line too long - конфликтует с black (не игнорирует комменты)
+# E704 - multiple statements on one line (def) - конфликтует с black
+# W503 - line break before binary operator - конфликтует с black
+# B008 - do not perform function calls in argument defaults - при применении Depends() становится ошибкой :)
+# PIE781 - assigning to variable and then returning - вызывает глупые ошибки mypy
+# PIE803 - prefer-logging-interpolation - f-строки выглядят читабельней
+
+per-file-ignores = 
+    __init__.py:F401,
+ignore = 
+    E203,
+    E501,
+    E704,
+    W503,
+    B008,
+    PIE781,
+    PIE803,
+    PIE786

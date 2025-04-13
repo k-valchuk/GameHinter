@@ -3,6 +3,7 @@ import sys
 from fastapi import FastAPI
 from loguru import logger
 
+from app.core.level_storage import LevelStorage
 from app.presentation.route_register import register_routers
 
 
@@ -19,6 +20,9 @@ class Application:
         self.__setup_logger()
         logger.info("Initialization..")
         app = FastAPI()
+        level_storage = LevelStorage()
+        app.dependency_overrides[LevelStorage] = lambda: level_storage
+        app.state.level_storage = level_storage
         register_routers(app)
         logger.info("Initialization complete")
         return app
