@@ -20,3 +20,8 @@ class Level(BaseModel):
             if "player" in obj.type:
                 return value
         raise ValueError
+
+
+class Hint(BaseModel):
+    id: int
+    hint: str

@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends
 
 from app.application.interfaces.hint_worker import IHintWorker
+from app.application.interfaces.models import Hint
 from app.config import config
 from app.core.hint_worker import HintWorker
 from app.utils.stub import Stub
@@ -12,7 +13,7 @@ router = APIRouter(prefix=f"{config.API_PREFIX}/hints")
 async def get_hint(
     level_id: int,
     hint_worker: IHintWorker = Depends(Stub(HintWorker)),
-) -> str:
+) -> Hint:
     """
     Endpoint для получения подсказки
 
@@ -21,4 +22,5 @@ async def get_hint(
     Исключения:
     - HTTPException(`404`) - Уровень не найден
     """
-    return await hint_worker.generate_hint(level_id)
+    hint = await hint_worker.generate_hint(level_id)
+    return Hint(id=level_id, hint=hint)
